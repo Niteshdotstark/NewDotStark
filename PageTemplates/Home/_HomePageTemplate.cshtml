@@ -1,0 +1,52 @@
+@using DotStark.PageTemplates
+@model TemplateViewModel<HomePageTemplateProperties>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Page data is injected separately via IWebPageDataContextRetriever in the view component
+    // Title/Detail come from the CMS page — use ViewData as fallback
+    var title = ViewData["PageTitle"] as string ?? "Welcome to DotStark";
+    var detail = ViewData["PageDetail"] as string ?? "This site is powered by Xperience by Kentico.";
+}
+
+<style>
+    .hero {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+        color: #fff;
+        border-radius: 12px;
+        padding: 64px 48px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 16px; }
+    .hero h1 span { color: #f5a623; }
+    .hero p { font-size: 1.15rem; color: #ccc; max-width: 560px; margin: 0 auto 32px; line-height: 1.7; }
+    .badge {
+        display: inline-block;
+        background: #f5a623;
+        color: #1a1a2e;
+        font-weight: 700;
+        font-size: 0.85rem;
+        padding: 6px 16px;
+        border-radius: 20px;
+    }
+    .page-builder-area {
+        background: #fff;
+        border-radius: 10px;
+        padding: 32px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        min-height: 120px;
+    }
+    .section-single-column { width: 100%; }
+</style>
+
+<section class="hero">
+    <h1>@title <span>2.0</span></h1>
+    <p>@detail</p>
+    <span class="badge">Xperience by Kentico v31</span>
+</section>
+
+<div class="page-builder-area">
+    <editable-area area-identifier="main-content" />
+</div>

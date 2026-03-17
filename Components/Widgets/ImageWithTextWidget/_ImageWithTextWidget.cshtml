@@ -1,0 +1,20 @@
+@using DotStark.Components.Widgets
+@model Kentico.PageBuilder.Web.Mvc.ComponentViewModel<ImageWithTextWidgetProperties>
+
+<div class="ds-iwt ds-iwt--@Model.Properties.ImagePosition">
+    @if (!string.IsNullOrEmpty(Model.Properties.ImageUrl))
+    {
+        <div class="ds-iwt__image">
+            <img src="@Model.Properties.ImageUrl" alt="@Model.Properties.ImageAlt" />
+        </div>
+    }
+    <div class="ds-iwt__content">
+        <h2 class="ds-iwt__heading">@Model.Properties.Heading</h2>
+        <p class="ds-iwt__text">@Model.Properties.Text</p>
+        @if (!string.IsNullOrEmpty(Model.Properties.ButtonText))
+        {
+            <a href="@Model.Properties.ButtonUrl" class="ds-btn ds-btn--primary">@Model.Properties.ButtonText</a>
+        }
+    </div>
+</div>
+

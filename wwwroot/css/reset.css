@@ -1,0 +1,23 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    color: var(--foreground);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+img, video { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+ul { list-style: none; }
+
+button { cursor: pointer; font-family: inherit; }

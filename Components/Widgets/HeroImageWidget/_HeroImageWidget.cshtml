@@ -1,0 +1,19 @@
+@using DotStark.Components.Widgets
+@model Kentico.PageBuilder.Web.Mvc.ComponentViewModel<HeroImageWidgetProperties>
+
+<div class="ds-hero @($"ds-hero--{Model.Properties.Alignment}")"
+     style="@(!string.IsNullOrEmpty(Model.Properties.ImageUrl) ? $"background-image:url('{Model.Properties.ImageUrl}')" : "")">
+    <div class="ds-hero__overlay"></div>
+    <div class="ds-hero__content">
+        <h1 class="ds-hero__heading">@Model.Properties.Heading</h1>
+        @if (!string.IsNullOrEmpty(Model.Properties.Subheading))
+        {
+            <p class="ds-hero__sub">@Model.Properties.Subheading</p>
+        }
+        @if (!string.IsNullOrEmpty(Model.Properties.ButtonText))
+        {
+            <a href="@Model.Properties.ButtonUrl" class="ds-btn ds-btn--primary">@Model.Properties.ButtonText</a>
+        }
+    </div>
+</div>
+

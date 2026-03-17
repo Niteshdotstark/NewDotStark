@@ -1,0 +1,17 @@
+@using DotStark.Components.Widgets
+@model Kentico.PageBuilder.Web.Mvc.ComponentViewModel<TestimonialWidgetProperties>
+
+<div class="ds-testimonial ds-testimonial--@Model.Properties.Theme">
+    <div class="ds-testimonial__quote">&ldquo;@Model.Properties.Quote&rdquo;</div>
+    <div class="ds-testimonial__author">
+        @if (!string.IsNullOrEmpty(Model.Properties.AuthorImageUrl))
+        {
+            <img src="@Model.Properties.AuthorImageUrl" alt="@Model.Properties.AuthorName" class="ds-testimonial__avatar" />
+        }
+        <div>
+            <div class="ds-testimonial__name">@Model.Properties.AuthorName</div>
+            <div class="ds-testimonial__title">@Model.Properties.AuthorTitle</div>
+        </div>
+    </div>
+</div>
+
