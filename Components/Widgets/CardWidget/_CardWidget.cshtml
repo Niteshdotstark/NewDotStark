@@ -1,0 +1,18 @@
+@using DotStark.Components.Widgets
+@model Kentico.PageBuilder.Web.Mvc.ComponentViewModel<CardWidgetProperties>
+
+<div class="ds-card">
+    @if (!string.IsNullOrEmpty(Model.Properties.IconClass))
+    {
+        <div class="ds-card__icon">
+            <i class="@Model.Properties.IconClass"></i>
+        </div>
+    }
+    <h3 class="ds-card__title">@Model.Properties.Title</h3>
+    <p class="ds-card__desc">@Model.Properties.Description</p>
+    @if (!string.IsNullOrEmpty(Model.Properties.LinkUrl))
+    {
+        <a href="@Model.Properties.LinkUrl" class="ds-card__link">@Model.Properties.LinkText</a>
+    }
+</div>
+

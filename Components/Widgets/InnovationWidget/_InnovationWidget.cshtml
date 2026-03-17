@@ -1,0 +1,36 @@
+@model DotStark.Components.Widgets.InnovationWidgetViewModel
+
+<section class="innovation section-padding"
+         style="background: @Model.BackgroundColor">
+    <div class="dot-pattern"></div>
+    <div class="container">
+        <div class="innovation-grid">
+            <div class="innovation-content">
+                @if (!string.IsNullOrEmpty(Model.SectionLabel))
+                {
+                    <p class="section-label">@Model.SectionLabel</p>
+                }
+                <h2 class="innovation-heading">@Model.Heading</h2>
+                <p class="innovation-desc">@Model.Description</p>
+                @if (!string.IsNullOrEmpty(Model.ButtonText))
+                {
+                    <a href="@Model.ButtonUrl" class="btn-primary-solid">
+                        @Model.ButtonText
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                }
+            </div>
+            <div class="example-list">
+                @for (int i = 0; i < Model.Examples.Length; i++)
+                {
+                    <div class="example-item">
+                        <span class="example-num">0@(i + 1)</span>
+                        <span>@Model.Examples[i]</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

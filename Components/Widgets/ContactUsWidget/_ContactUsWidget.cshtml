@@ -1,0 +1,24 @@
+@model DotStark.Components.Widgets.ContactUsWidgetViewModel
+
+<section class="cta-section section-padding"
+         style="background: @Model.BackgroundColor">
+    <div class="container">
+        <div class="cta-inner">
+            <h2 class="cta-heading">@Model.Heading</h2>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p class="cta-desc">@Model.Description</p>
+            }
+            <div class="cta-btn-group">
+                @if (!string.IsNullOrEmpty(Model.PrimaryButtonText))
+                {
+                    <a href="@Model.PrimaryButtonUrl" class="btn btn-white">@Model.PrimaryButtonText</a>
+                }
+                @if (!string.IsNullOrEmpty(Model.SecondaryButtonText))
+                {
+                    <a href="@Model.SecondaryButtonUrl" class="btn btn-outline-white">@Model.SecondaryButtonText</a>
+                }
+            </div>
+        </div>
+    </div>
+</section>

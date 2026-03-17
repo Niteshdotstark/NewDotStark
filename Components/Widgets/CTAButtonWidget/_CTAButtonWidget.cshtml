@@ -1,0 +1,20 @@
+@using DotStark.Components.Widgets
+@model Kentico.PageBuilder.Web.Mvc.ComponentViewModel<CTAButtonWidgetProperties>
+
+@{
+    var btnClass = Model.Properties.Style switch
+    {
+        "secondary" => "ds-btn ds-btn--secondary",
+        "outline"   => "ds-btn ds-btn--outline",
+        _           => "ds-btn ds-btn--primary"
+    };
+}
+
+<div class="ds-cta">
+    <a href="@(Model.Properties.LinkUrl ?? "#")"
+       class="@btnClass"
+       @(Model.Properties.OpenInNewTab ? "target=\"_blank\" rel=\"noopener\"" : "")>
+        @Model.Properties.Text
+    </a>
+</div>
+

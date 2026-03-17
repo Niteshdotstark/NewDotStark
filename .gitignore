@@ -27,6 +27,9 @@ artifacts/
 *.dbproj.user
 *.jfm
 
+# Reference folders
+DancingGoatXbyk/
+
 # OS generated files
 .DS_Store
 Thumbs.db
